@@ -1,26 +1,17 @@
 respuesta = 1
 
-def Suma(numero1,numero2=0):
-    if numero2!=0:
-        resultado = numero1 + numero2
-        numero1=float(input('Ingrese numero a sumar: '))
-        return numero1 + Suma(resultado)
-    elif numero2==0:
-        return numero1
+def Suma(numero1):
+    if numero1 != 0:
+        numeroTemp=float(input('Ingrese un numero para sumar o "0" para salir: '))
+        return numero1 + Suma(numeroTemp)
     else:
-        numero2=float(input('Ingrese numero a sumar: '))
-        return numero1 + Suma(numero2)
+        return numero1
 
-def  Potencia(numero1,numero2=0):
-    if numero2!=0:
-        resultado = numero1 * numero2
-        numero1=float(input('Ingrese numero a sumar: '))
-        return numero1 * Potencia(resultado)
-    elif numero2==0:
-        return numero1
-    else:
-        numero2=float(input('Ingrese numero a sumar: '))
-        return numero1 + Potencia(numero2)
+def  Potencia(numero1,numero2):
+    exponente=numero1
+    for i in range(numero2-1):
+        numero1*=exponente
+    return numero1
 
 def NumCaracteres(frase):
     contador = 0
@@ -90,15 +81,14 @@ while respuesta != 0:
     if respuesta != 0:
         if respuesta == 1:
             numero1 = float(input('Ingrese el numero uno a sumar: '))
-            numero2 = float(input('Ingrese el siguiente numero a sumar: '))
-            resultadoSuma=Suma(numero1,numero2)
+            resultadoSuma=Suma(numero1)
             print('El resultado de su suma es: ',resultadoSuma)
 
         if respuesta == 2:
-            numero1 = float(input('Ingrese el numero a Potenciar: '))
-            numero2 = float(input('Ingrese la Potencia: '))
-            resultodoSuma=Suma(numero1,numero2)
-            print('El resultado de su Potencia es: ',resultodoSuma)
+            numero1 = int(input('Ingrese el numero a Potenciar: '))
+            numero2 = int(input('Ingrese la Potencia: '))
+            resultodoPotencia=Potencia(numero1,numero2)
+            print('El resultado de su Potencia es: ',resultodoPotencia)
 
         if respuesta == 3:
             frase = list(input('Ingrese la frase: '))
