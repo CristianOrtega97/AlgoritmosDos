@@ -55,16 +55,36 @@ def VocalesConsonantes(frase):
     print('Las consonantes que tiene son: ',consonantes)
     print('Las vocales que tiene son: ',vocales)
 
-def ParOImpar():
-    pass
+def ParOImpar(numero):
+    residuo = numero % 2
+    if residuo == 0:
+        print('El numero es par')
+
+    else:
+        print('El numero es impar')
+
+def Apuntadores():
+    x = 2015
+    y = x
+    x = 2016
+
+    print(x)
+    print(y)
+
+    v = [1]
+    w = v
+    v.append(2)
+
+    print(v)
+    print(w)
 
 while respuesta != 0:
     print('1.- Suma el numero de datos que el usuario indique')
     print('2.- Potencia de un numero que el usuario indique')
     print('3.- Numero de caracteres')
     print('4.- Contador Vocales y Consonantes')
-    print('5.- ')
-    print('6.- ')
+    print('5.- Par o Impar')
+    print('6.- Ejemplo Apuntadores')
     print('0.- Salir')
     respuesta=int(input('Respuesta= '))
     if respuesta != 0:
@@ -88,6 +108,13 @@ while respuesta != 0:
         if respuesta == 4:
             frase = list(input('Ingrese la frase: '))
             VocalesConsonantes(frase)
+
+        if respuesta == 5:
+            numero = int(input('Ingrese el numero entero: '))
+            ParOImpar(numero)
+
+        if respuesta == 6:
+            Apuntadores()
 
     else:
         print('Gracias por utilizar nuestro programa')
