@@ -6,8 +6,23 @@ def Fibonacci(numero):
     else:
         return Fibonacci(numero -1) + Fibonacci(numero-2)
 
-def Producto():
-    pass
+def ProductoSuma(numero):
+    if numero == 1:
+            return numero
+    else:
+        try:
+            return numero + ProductoSuma(numero-1)
+        except RecursionError:
+            print('Ingrese un número mayor o igual a 1')
+
+def ProductoMult(numero):
+    if numero == 1:
+            return numero
+    else:
+        try:
+            return numero * ProductoMult(numero-1)
+        except RecursionError:
+            print('Ingrese un número mayor o igual a 1')
 
 def Palindromo(frase,primera_pos,ultima_pos):
     if primera_pos == ultima_pos:
@@ -44,7 +59,23 @@ while respuesta != 0:
                 else:
                     print('Ingrese una letra MAYÚSCULA O minuscula')
         if respuesta == 2:
-            pass
+            print('1.- Suma')
+            print('2.- Producto')
+            print('0.- Salir')
+            opcion=int(input('Seleccione la opción deseada: '))
+            
+            if opcion != 0:
+                if opcion == 1:
+                    numero = int(input('Ingrese un número: '))
+                    print('La respuesta es: ',ProductoSuma(numero))
+                elif opcion == 2:
+                    numero = int(input('Ingrese un número: '))
+                    print('La respuesta es: ',ProductoMult(numero))
+                else:
+                    print('Ingrese una opción valida')
+                    print('Volviendo al menú principal')
+            else:
+                print('Volviendo al menú principal')
 
         if respuesta == 3:
             frase = str(input('Ingrese la frase palíndroma: ')).lower()
