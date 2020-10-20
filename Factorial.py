@@ -1,10 +1,15 @@
 def factorial (numero):
-        if numero == 1:
-            return numero
+        if numero == 1 or numero == 0:
+            if numero == 0:
+                return 1
+            else:
+                return numero
         else:
             try:
                 return numero * factorial(numero-1)
             except RecursionError:
+                print('Ingrese un número mayor o igual a 1')
+            except TypeError:
                 print('Ingrese un número mayor o igual a 1')
 
 numero = input('Ingrese un número: ')
